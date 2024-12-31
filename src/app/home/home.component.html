@@ -1,0 +1,18 @@
+<div class="main-bg text-white d-flex align-items-center justify-content-center" style="min-height: 100vh; background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);">
+    <div class="container py-5">
+        <h1 class="text-center text-white mb-5">Our Products</h1>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let product of products">
+                <div class="card product-card h-100" style="background-color: #2a2a3c; color: #fff; border: none; border-radius: 15px; transition: transform 0.3s, box-shadow 0.3s;">
+                    <img [src]="product.images[0]" class="card-img-top rounded-top p-3" style="max-height: 250px; object-fit: contain;" alt="Product Image" alt="Product Image">
+                    <div class="card-body text-center d-flex flex-column">
+                        <h5 class="card-title fs-4 mb-3">{{ product.title }}</h5>
+                        <p class="card-text text-light">{{ product.description }}</p>
+                        <div class="price mb-3" style="font-size: 1.2rem; font-weight: bold; color: #f0db4f;" >{{ product.price |currency: 'INR' }}</div>
+                        <a  class="btn btn-outline-warning btn-sm mt-auto" (click)="addToCart(product)" >Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
